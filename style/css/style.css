@@ -1,0 +1,151 @@
+/* ---------------------- reset style start --------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ---------------------- reset style end --------------------------- */
+
+/* ---------------------- general style start --------------------------- */
+
+body {
+    font-family: 'vazir', sans-serif;
+    font-weight: 300;
+    font-size: .8rem;
+}
+
+@media only screen and (min-width : 768px) {
+    body {
+        font-size: .9rem;
+    }
+}
+
+@media only screen and (min-width : 992px) {
+    body {
+        font-size: 1rem;
+    }
+}
+
+/* ---------------------- general style end --------------------------- */
+
+/* ---------------------- utilities start --------------------------- */
+
+.box-shadow-wide {
+    box-shadow: 0 0.25rem 1.5rem #37474f;
+}
+
+/* ---------------------- utilities end --------------------------- */
+
+/* ---------------------- main start --------------------------- */
+
+/* ----- carousel start ----- */
+
+#mainCarousel {
+    background-color: rgb(10, 31, 68);
+    margin-top: 4.425rem;
+}
+
+.carousel-inner {
+    padding: 0 7% !important;
+}
+
+.carousel-item img {
+    height: auto;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 6%;
+    height: 50%;
+}
+
+@media only screen and (min-width : 576px) {
+    .carousel-control-prev,
+    .carousel-control-next {
+        height: 65%;
+    }
+}
+
+@media only screen and (min-width : 768px) {
+    .carousel-control-prev,
+    .carousel-control-next {
+        height: auto;
+    }
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: grayscale(0) invert(0) !important;
+}
+
+.carousel-caption {
+    position: unset;
+}
+
+.carousel-indicators button {
+    background-color: rgba(173, 181, 189, 0.75) !important;
+}
+
+/* ----- carousel end ----- */
+
+/* ----- content secotion start ----- */
+
+.container {
+    max-width: 1000px;
+}
+
+img.rounded-circle {
+    width: 50%;
+    height: auto;
+    transition: transform .25s ease;
+}
+
+img.rounded-circle:hover {
+    transform: scale(1.1);
+}
+
+.image-flags {
+    width: 15%;
+    height: auto;
+}
+
+/* ----- content secotion end ----- */
+
+/* ---------------------- main end --------------------------- */
+
+/* ---------------------- footer start --------------------------- */
+
+footer {
+    background: #161a1d;
+}
+
+footer svg:not(.ma-icon-brand) {
+    width: 1.8rem;
+    height: auto;
+    cursor: pointer;
+}
+
+svg.ma-icon-brand {
+    width: 2.3rem;
+    height: auto;
+}
+
+div.ma-wrap-item {
+    min-width: 130px;
+}
+
+@media only screen and (min-width : 292px) {
+    .ma-ms-0 {
+        margin-right: 0 !important;
+    }
+}
+
+/* ---------------------- footer end --------------------------- */
