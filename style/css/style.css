@@ -20,7 +20,15 @@ body {
     font-family: 'vazir', sans-serif;
     font-weight: 300;
     font-size: .8rem;
+    
 }
+
+.main-container {
+    /* background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%); */
+    padding: 3rem 0;
+    width: 100%;
+}
+
 
 @media only screen and (min-width : 768px) {
     body {

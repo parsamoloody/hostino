@@ -10,6 +10,130 @@
     <link rel="stylesheet" href="./style/css/bootstrap.rtl.min.css">
     <link rel="stylesheet" href="./style/css/style.css">
 </head>
+
+<style>
+    .hosting-card {
+        background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+        color: #e0e0e0;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .hosting-card::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: linear-gradient(45deg, #00b4db, #0083b0, #00b4db);
+        z-index: -1;
+        border-radius: 16px;
+        opacity: 0.7;
+        transition: opacity 0.3s ease;
+    }
+    
+    .hosting-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    }
+    
+    .hosting-card:hover::before {
+        opacity: 1;
+    }
+    
+    .featured-card {
+        background: linear-gradient(135deg, #1a2980 0%, #26d0ce 100%);
+    }
+    
+    .featured-card::before {
+        background: linear-gradient(45deg, #ff8a00, #e52e71, #ff8a00);
+    }
+    
+    .hosting-img {
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+        border: 3px solid rgba(255, 255, 255, 0.1);
+        padding: 5px;
+        background: rgba(255, 255, 255, 0.05);
+        transition: all 0.3s ease;
+    }
+    
+    .hosting-card:hover .hosting-img {
+        transform: scale(1.05);
+        border-color: rgba(255, 255, 255, 0.3);
+    }
+    
+    .hosting-title {
+        font-weight: 700;
+        color: #fff;
+        position: relative;
+        padding-bottom: 10px;
+    }
+    
+    .hosting-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 2px;
+        background: linear-gradient(to right, transparent, #00b4db, transparent);
+    }
+    
+    .hosting-price {
+        display: block;
+        margin-bottom: 15px;
+        font-size: 1.1rem;
+    }
+    
+    .hosting-features li {
+        padding: 8px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        transition: all 0.2s ease;
+    }
+    
+    .hosting-features li:hover {
+        background: rgba(255, 255, 255, 0.03);
+        padding-left: 5px;
+    }
+    
+    .hosting-btn {
+        background: transparent;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        color: #fff;
+        font-weight: 600;
+        border-radius: 30px;
+        padding: 10px;
+        transition: all 0.3s ease;
+        margin-top: 10px;
+    }
+    
+    .hosting-btn:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: #00b4db;
+        color: #fff;
+        transform: translateY(-2px);
+    }
+    
+    .image-flags {
+        width: 30px;
+        height: 20px;
+        object-fit: cover;
+        border-radius: 3px;
+        transition: transform 0.3s ease;
+    }
+    
+    .image-flags:hover {
+        transform: scale(1.2);
+    }
+</style>
 <body>
     <header>
         <div class="navbar navbar-expand-lg px-4 py-3 box-shadow-wide fixed-top bg-dark">
@@ -117,114 +241,337 @@
                 <span class="carousel-control-next-icon"></span>
             </button>
         </div>
-        <div class="container py-5">
+        <div class="container main-container py-5"
+    >
+            <!-- Cards -->
             <div class="row align-items-center gy-3 gy-sm-0">
                 <div class="col-sm-6 col-md-4 order-sm-0">
-                    <div class="card py-3 px-1 text-center overflow-hidden">
-                        <img class="card-img-top rounded-circle mx-auto" src="./style/images/wordpress.png" alt="Hostino photo">
+                    <div class="card py-3 px-1 text-center overflow-hidden hosting-card">
+                        <img class="card-img-top rounded-circle mx-auto hosting-img" src="./style/images/wordpress.png" alt="Hostino photo">
                         <div class="card-body">
-                             <h2 class="card-title mb-3">هاست وردپرس</h2>
-                             <span>شروع قیمت از<span class="text-white"> 59 هزار تومان</span></span>
+                             <h2 class="card-title mb-3 hosting-title">هاست وردپرس</h2>
+                             <span class="hosting-price">شروع قیمت از<span class="text-white"> 59 هزار تومان</span></span>
                              <div class="d-flex justify-content-center align-items-center column-gap-2 mt-2">
                                 <img class="image-flags" src="./style/images/ir.png.webp" alt="Iran photo">
                                 <img class="image-flags" src="./style/images/france.png" alt="France photo">
                                 <img class="image-flags" src="./style/images/ca.png.webp" alt="Canda photo">
                              </div>
-                             <ul class="list-unstyled mt-2">
+                             <ul class="list-unstyled mt-2 hosting-features">
                                 <li class="text-center"><span class="fa-solid fa-check text-success"></span>بهینه شده برای وردپرس</li>
                                 <li class="text-center"><span class="fa-solid fa-check text-success"></span>ویژگی منابع اختصاصی</li>
                                 <li class="text-center"><span class="fa-solid fa-check text-success"></span>هارد پرسرعت NVMe</li>
                                 <li class="text-center"><span class="fa-solid fa-check text-success"></span>SSL رایگان</li>
                                 <li class="text-center"><span class="fa-solid fa-check text-success"></span>انتقال رایگان</li>
                              </ul>
-                             <a href="#" class="btn btn-outline-light col-12">مشاهده پنل</a>
+                             <a href="#" class="btn hosting-btn col-12">مشاهده پنل</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-8 col-md-4 order-sm-2 order-md-1 mt-sm-4 mt-md-0 mx-sm-auto">
-                    <div class="card px-1 py-3 text-center overflow-hidden">
-                        <img class="card-img-top rounded-circle mx-auto mb-0 mb-md-1" src="./style/images/hosting-company-logo-design_717991-4.png" alt="Hostino photo">
+                    <div class="card px-1 py-3 text-center overflow-hidden hosting-card featured-card">
+                        <img class="card-img-top rounded-circle mx-auto mb-0 mb-md-1 hosting-img" src="./style/images/hosting-company-logo-design_717991-4.png" alt="Hostino photo">
                         <div class="card-body">
-                             <h2 class="card-title text-white mb-3 mb-lg-4">هاست اختصاصی</h2>
-                             <span>شروع قیمت از<span class="text-white"> 59 هزار تومان</span></span>
+                             <h2 class="card-title text-white mb-3 mb-lg-4 hosting-title">هاست اختصاصی</h2>
+                             <span class="hosting-price">شروع قیمت از<span class="text-white"> 59 هزار تومان</span></span>
                              <div class="d-flex justify-content-center align-items-center column-gap-2 mt-2 mt-md-3">
                                 <img class="image-flags" src="./style/images/ir.png.webp" alt="Iran photo">
                                 <img class="image-flags" src="./style/images/france.png" alt="France photo">
                                 <img class="image-flags" src="./style/images/ca.png.webp" alt="Canda photo">
                              </div>
-                             <ul class="list-unstyled mt-2 mt-md-3 mb-3 mb-md-4">
+                             <ul class="list-unstyled mt-2 mt-md-3 mb-3 mb-md-4 hosting-features">
                                 <li class="mb-0 mb-lg-1 text-center"><span class="fa-solid fa-check text-success"></span>مناسب انواع CMS(PHP)</li>
                                 <li class="mb-0 mb-lg-1 text-center"><span class="fa-solid fa-check text-success"></span>ویژگی منابع اختصاصی</li>
                                 <li class="mb-0 mb-lg-1 text-center"><span class="fa-solid fa-check text-success"></span>هارد پرسرعت NVMe</li>
                                 <li class="mb-0 mb-lg-1 text-center"><span class="fa-solid fa-check text-success"></span>SSL رایگان</li>
                                 <li class="mb-0 mb-lg-1 text-center"><span class="fa-solid fa-check text-success"></span>انتقال رایگان</li>
                              </ul>
-                             <a href="#" class="btn btn-outline-light col-12">مشاهده پنل</a>
+                             <a href="#" class="btn hosting-btn col-12">مشاهده پنل</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4 order-sm-1 order-md-2">
-                    <div class="card py-3 px-1 text-center overflow-hidden">
-                        <img class="card-img-top rounded-circle mx-auto" src="./style/images/WooCommerce3.png" alt="Hostino photo">
+                    <div class="card py-3 px-1 text-center overflow-hidden hosting-card">
+                        <img class="card-img-top rounded-circle mx-auto hosting-img" src="./style/images/WooCommerce3.png" alt="Hostino photo">
                         <div class="card-body">
-                             <h2 class="card-title mb-3">هاست ووکامرس</h2>
-                             <span>شروع قیمت از<span class="text-white"> 199 هزار تومان</span></span>
+                             <h2 class="card-title mb-3 hosting-title">هاست ووکامرس</h2>
+                             <span class="hosting-price">شروع قیمت از<span class="text-white"> 199 هزار تومان</span></span>
                              <div class="d-flex justify-content-center align-items-center column-gap-2 mt-2">
                                 <img class="image-flags" src="./style/images/ir.png.webp" alt="Iran photo">
                                 <img class="image-flags" src="./style/images/france.png" alt="France photo">
                                 <img class="image-flags" src="./style/images/ca.png.webp" alt="Canda photo">
                              </div>
-                             <ul class="list-unstyled mt-2">
+                             <ul class="list-unstyled mt-2 hosting-features">
                                 <li class="text-center"><span class="fa-solid fa-check text-success"></span>بهینه شده برای ووکامرس</li>
                                 <li class="text-center"><span class="fa-solid fa-check text-success"></span>ویژگی منابع اختصاصی</li>
                                 <li class="text-center"><span class="fa-solid fa-check text-success"></span>هارد پرسرعت NVMe</li>
                                 <li class="text-center"><span class="fa-solid fa-check text-success"></span>SSL رایگان</li>
                                 <li class="text-center"><span class="fa-solid fa-check text-success"></span>انتقال رایگان</li>
                              </ul>
-                             <a href="#" class="btn btn-outline-light col-12">مشاهده پنل</a>
+                             <a href="#" class="btn hosting-btn col-12">مشاهده پنل</a>
                         </div>
                     </div>
                 </div>
             </div>
+
             <hr class="my-sm-4 my-md-5">
-            <div class="row align-items-center">
-                <div class="col-sm-8 order-last order-sm-first">
-                    <h3 class="mt-3 mt-sm-0">هاست های لینوکسی!</h3>
-                    <p>
-                    هاست لینوکس هاستینو برای انواع وب‌سایت‌های لینوکسی بهینه شده است و با در نظر گرفتن نقاط قوت و ضعف سیستم مدیریت محتوای لینوکس، سرعت و عملکرد بسیار بالایی را به وب سایت شما می‌بخشد. هاستینو، سرویس هاست لینوکس را با پشتیبانی فنی ۲۴ ساعته و آپتایم ۹۹.۹٪ به کاربران خود ارائه می‌دهد. هاستینو، ارائه‌دهنده بهترین هاست لینوکس است زیرا در تمامی سرویس‌های هاست لینوکسی از دیسک‌های NVMe/SSD همراه با Raid سخت‌افزاری استفاده شده است که باعث لود بسیار سریع صفحه وبسایت شما می‌شود.
-                    </p>
-                    <a href="#" class="btn btn-primary">اطلاعات بیشتر</a>
+            <div class="hosting-section">
+                <!-- Linux Hosting -->
+                <div class="row align-items-center hosting-row">
+                    <div class="col-sm-8 order-last order-sm-first">
+                        <div class="hosting-content linux-content">
+                            <h3 class="hosting-title">هاست های لینوکسی!</h3>
+                            <p class="hosting-description">
+                                هاست لینوکس هاستینو برای انواع وب‌سایت‌های لینوکسی بهینه شده است و با در نظر گرفتن نقاط قوت و ضعف سیستم مدیریت محتوای لینوکس، سرعت و عملکرد بسیار بالایی را به وب سایت شما می‌بخشد. هاستینو، سرویس هاست لینوکس را با پشتیبانی فنی ۲۴ ساعته و آپتایم ۹۹.۹٪ به کاربران خود ارائه می‌دهد. هاستینو، ارائه‌دهنده بهترین هاست لینوکس است زیرا در تمامی سرویس‌های هاست لینوکسی از دیسک‌های NVMe/SSD همراه با Raid سخت‌افزاری استفاده شده است که باعث لود بسیار سریع صفحه وبسایت شما می‌شود.
+                            </p>
+                            <a href="#" class="hosting-btn">اطلاعات بیشتر <i class="fas fa-arrow-left ms-2"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 order-first order-sm-last">
+                        <div class="hosting-image-container">
+                            <img class="hosting-image" src="./style/images/Hosting-PNG-Cutout.png" alt="Linux hosting">
+                            <div class="image-overlay linux-overlay"></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-sm-4 order-first order-sm-last">
-                    <img class="d-block w-100" src="./style/images/Hosting-PNG-Cutout.png" alt="wordpress photo">
+            
+                <div class="divider"></div>
+            
+                <!-- WordPress Hosting -->
+                <div class="row align-items-center hosting-row">
+                    <div class="col-sm-4">
+                        <div class="hosting-image-container">
+                            <img class="hosting-image" src="./style/images/wordpress (1).png" alt="WordPress hosting">
+                            <div class="image-overlay wp-overlay"></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="hosting-content wp-content">
+                            <h3 class="hosting-title">هاست های وردپرسی!</h3>
+                            <p class="hosting-description">
+                                هاست وردپرس هاستینو برای انواع وب‌سایت‌های وردپرسی بهینه شده است و با در نظر گرفتن نقاط قوت و ضعف سیستم مدیریت محتوای وردپرس، سرعت و عملکرد بسیار بالایی را به وب سایت شما می‌بخشد. هاستینو، سرویس هاست وردپرس را با پشتیبانی فنی ۲۴ ساعته و آپتایم ۹۹.۹٪ به کاربران خود ارائه می‌دهد. هاستینو، ارائه‌دهنده بهترین هاست وردپرس است زیرا در تمامی سرویس‌های هاست وردپرس از دیسک‌های NVMe/SSD همراه با Raid سخت‌افزاری استفاده شده است که باعث لود بسیار سریع صفحه وبسایت شما می‌شود. سرویس هاست وردپرس هاستینو، با کنترل پنل محبوب cPanel ارائه می‌شود.
+                            </p>
+                            <a href="#" class="hosting-btn">اطلاعات بیشتر <i class="fas fa-arrow-left ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="divider"></div>
+            
+                <!-- Windows Hosting -->
+                <div class="row align-items-center hosting-row">
+                    <div class="col-sm-8 order-last order-sm-first">
+                        <div class="hosting-content windows-content">
+                            <h3 class="hosting-title">هاست های ویندوزی!</h3>
+                            <p class="hosting-description">
+                                هاست ویندوز هاستینو برای انواع وب‌سایت‌های ویندوزی بهینه شده است و با در نظر گرفتن نقاط قوت و ضعف سیستم مدیریت محتوای ویندوز، سرعت و عملکرد بسیار بالایی را به وب سایت شما می‌بخشد. هاستینو، سرویس هاست ویندوز را با پشتیبانی فنی ۲۴ ساعته و آپتایم ۹۹.۹٪ به کاربران خود ارائه می‌دهد. هاستینو، ارائه‌دهنده بهترین هاست ویندوز است زیرا در تمامی سرویس‌های هاست ویندوزی از دیسک‌های NVMe/SSD همراه با Raid سخت‌افزاری استفاده شده است که باعث لود بسیار سریع صفحه وبسایت شما می‌شود.
+                            </p>
+                            <a href="#" class="hosting-btn">اطلاعات بیشتر <i class="fas fa-arrow-left ms-2"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 order-first order-sm-last">
+                        <div class="hosting-image-container">
+                            <img class="hosting-image" src="./style/images/Hosting-PNG-Image.png" alt="Windows hosting">
+                            <div class="image-overlay windows-overlay"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <hr class="my-sm-4 my-md-5">
-            <div class="row align-items-center">
-                <div class="col-sm-4">
-                    <img class="d-block w-100" src="./style/images/wordpress (1).png" alt="wordpress photo">
-                </div>
-                <div class="col-sm-8">
-                    <h3 class="mt-3 mt-sm-0">هاست های وردپرسی!</h3>
-                    <p>
-                        هاست وردپرس هاستینو برای انواع وب‌سایت‌های وردپرسی بهینه شده است و با در نظر گرفتن نقاط قوت و ضعف سیستم مدیریت محتوای وردپرس، سرعت و عملکرد بسیار بالایی را به وب سایت شما می‌بخشد. هاستینو، سرویس هاست وردپرس را با پشتیبانی فنی ۲۴ ساعته و آپتایم ۹۹.۹٪ به کاربران خود ارائه می‌دهد. هاستینو، ارائه‌دهنده بهترین هاست وردپرس است زیرا در تمامی سرویس‌های هاست وردپرس از دیسک‌های NVMe/SSD همراه با Raid سخت‌افزاری استفاده شده است که باعث لود بسیار سریع صفحه وبسایت شما می‌شود. سرویس هاست وردپرس هاستینو، با کنترل پنل محبوب cPanel ارائه می‌شود.
-                    </p>
-                    <a href="#" class="btn btn-primary">اطلاعات بیشتر</a>
-                </div>
-            </div>
-            <hr class="my-sm-4 my-md-5">
-            <div class="row align-items-center">
-                <div class="col-sm-8 order-last order-sm-first">
-                    <h3 class="mt-3 mt-sm-0">هاست های ویندوزی!</h3>
-                    <p>
-                    هاست ویندوز هاستینو برای انواع وب‌سایت‌های ویندوزی بهینه شده است و با در نظر گرفتن نقاط قوت و ضعف سیستم مدیریت محتوای ویندوز، سرعت و عملکرد بسیار بالایی را به وب سایت شما می‌بخشد. هاستینو، سرویس هاست ویندوز را با پشتیبانی فنی ۲۴ ساعته و آپتایم ۹۹.۹٪ به کاربران خود ارائه می‌دهد. هاستینو، ارائه‌دهنده بهترین هاست ویندوز است زیرا در تمامی سرویس‌های هاست ویندوزی از دیسک‌های NVMe/SSD همراه با Raid سخت‌افزاری استفاده شده است که باعث لود بسیار سریع صفحه وبسایت شما می‌شود.
-                    </p>
-                    <a href="#" class="btn btn-primary">اطلاعات بیشتر</a>
-                </div>
-                <div class="col-sm-4 order-first order-sm-last">
-                    <img class="d-block w-100" src="./style/images/Hosting-PNG-Image.png" alt="wordpress photo">
-                </div>
-            </div>
+            
+            <style>
+                .hosting-section {
+/*  */
+                }
+            
+                .hosting-row {
+                    margin: 0 auto;
+                    max-width: 1200px;
+                    padding: 2rem;
+                }
+            
+                .hosting-content {
+                    padding: 2rem;
+                    border-radius: 15px;
+                    position: relative;
+                    z-index: 1;
+                    transition: all 0.4s ease;
+                }
+            
+                .linux-content {
+                    background: rgba(16, 185, 129, 0.1);
+                    border-left: 4px solid #10b981;
+                }
+            
+                .wp-content {
+                    background: rgba(59, 130, 246, 0.1);
+                    border-right: 4px solid #3b82f6;
+                }
+            
+                .windows-content {
+                    background: rgba(139, 92, 246, 0.1);
+                    border-left: 4px solid #8b5cf6;
+                }
+            
+                .hosting-title {
+                    font-size: 2rem;
+                    font-weight: 700;
+                    margin-bottom: 1.5rem;
+                    position: relative;
+                    display: inline-block;
+                }
+            
+                .hosting-title::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -10px;
+                    left: 0;
+                    width: 60px;
+                    height: 3px;
+                    border-radius: 3px;
+                }
+            
+                .linux-content .hosting-title::after {
+                    background: linear-gradient(to right, #10b981, #a7f3d0);
+                }
+            
+                .wp-content .hosting-title::after {
+                    background: linear-gradient(to right, #3b82f6, #93c5fd);
+                }
+            
+                .windows-content .hosting-title::after {
+                    background: linear-gradient(to right, #8b5cf6, #c4b5fd);
+                }
+            
+                .hosting-description {
+                    font-size: 1.1rem;
+                    line-height: 1.8;
+                    margin-bottom: 2rem;
+                    color: #e5e7eb;
+                }
+            
+                .hosting-btn {
+                    display: inline-flex;
+                    align-items: center;
+                    padding: 0.75rem 1.5rem;
+                    border-radius: 50px;
+                    font-weight: 600;
+                    text-decoration: none;
+                    transition: all 0.3s ease;
+                    position: relative;
+                    overflow: hidden;
+                    z-index: 1;
+                    border: none;
+                }
+            
+                .linux-content .hosting-btn {
+                    background: linear-gradient(45deg, #10b981, #34d399);
+                    color: white;
+                }
+            
+                .wp-content .hosting-btn {
+                    background: linear-gradient(45deg, #3b82f6, #60a5fa);
+                    color: white;
+                }
+            
+                .windows-content .hosting-btn {
+                    background: linear-gradient(45deg, #8b5cf6, #a78bfa);
+                    color: white;
+                }
+            
+                .hosting-btn::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(255, 255, 255, 0.1);
+                    z-index: -1;
+                    transform: scaleX(0);
+                    transform-origin: right;
+                    transition: transform 0.4s ease;
+                }
+            
+                .hosting-btn:hover::before {
+                    transform: scaleX(1);
+                    transform-origin: left;
+                }
+            
+                .hosting-btn:hover {
+                    transform: translateY(-3px);
+                    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+                }
+            
+                .hosting-image-container {
+                    position: relative;
+                    border-radius: 15px;
+                    overflow: hidden;
+                    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+                    transition: all 0.4s ease;
+                }
+            
+                .hosting-image {
+                    width: 100%;
+                    height: auto;
+                    display: block;
+                    transition: transform 0.5s ease;
+                }
+            
+                .image-overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0.3;
+                    transition: all 0.4s ease;
+                }
+            
+                .linux-overlay {
+                    background: linear-gradient(45deg, #10b981, #065f46);
+                }
+            
+                .wp-overlay {
+                    background: linear-gradient(45deg, #3b82f6, #1e40af);
+                }
+            
+                .windows-overlay {
+                    background: linear-gradient(45deg, #8b5cf6, #5b21b6);
+                }
+            
+                .hosting-image-container:hover {
+                    transform: translateY(-10px);
+                }
+            
+                .hosting-image-container:hover .hosting-image {
+                    transform: scale(1.05);
+                }
+            
+                .hosting-image-container:hover .image-overlay {
+                    opacity: 0.5;
+                }
+            
+                .divider {
+                    height: 1px;
+                    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+                    margin: 3rem auto;
+                    max-width: 1200px;
+                }
+            
+                @media (max-width: 768px) {
+                    .hosting-content {
+                        padding: 1.5rem;
+                        margin-top: 1.5rem;
+                    }
+                    
+                    .hosting-title {
+                        font-size: 1.7rem;
+                    }
+                    
+                    .hosting-description {
+                        font-size: 1rem;
+                    }
+                }
+            </style>
         </div>
     </main>
 
@@ -280,7 +627,7 @@
             </div>
             <hr class="mb-3">
             <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center">
-                <span class="text-center mb-2 mb-sm-0">تمامی حقوق مادی و معنوی سایت متعلق به ماهان می باشد&copy;</span>
+                <span class="text-center mb-2 mb-sm-0">تمامی حقوق مادی و معنوی سایت متعلق به هاست می باشد&copy;</span>
                 <div>
                     <span><a class="link-light link-opacity-75 link-opacity-100-hover me-2" href="#">قوانین و مقررات</a></span>
                     <span><a class="link-light link-opacity-75 link-opacity-100-hover" href="#">حریم خصوصی</a></span>
